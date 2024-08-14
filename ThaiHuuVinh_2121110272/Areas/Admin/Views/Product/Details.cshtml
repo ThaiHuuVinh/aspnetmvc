@@ -1,0 +1,220 @@
+﻿@model ThaiHuuVinh_2121110272.Context.Product
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    h4 {
+        margin-top: 0;
+        color: #555;
+    }
+
+    dl {
+        margin: 0;
+        padding: 0;
+    }
+
+    dt {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    dd {
+        margin: 0 0 20px 0;
+        padding: 0;
+        color: #555;
+    }
+
+    img.product-image {
+        max-width: 30%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #eee;
+        margin: 20px 0;
+    }
+
+    p {
+        margin-top: 20px;
+    }
+
+    a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+    button {
+        background-color: #007bff;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+</style>
+
+<div class="container">
+    <h2>Chi tiết sản phẩm</h2>
+
+    <div>
+
+        <dl>
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Avatar)
+            </dt>
+            <dd>
+                @if (Model.Avatar != null)
+                {
+                    <img src="~/Content/images/items/@Model.Avatar" alt="Product Image" class="product-image" />
+                }
+                else
+                {
+                    <p>No image available</p>
+                }
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CategoryId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ShortDes)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ShortDes)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FullDescription)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.FullDescription)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.PriceDiscount)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.PriceDiscount)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TypeId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TypeId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Slug)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Slug)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.BrandId)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.BrandId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Deleted)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Deleted)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ShowOnHomePage)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ShowOnHomePage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DisplayOrder)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.DisplayOrder)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedOnUtc)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedOnUtc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdatedOnUtc)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.UpdatedOnUtc)
+            </dd>
+        </dl>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
